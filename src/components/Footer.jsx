@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="w-full h-20 bg-[#2C2C2C] text-white flex items-center justify-center">
+        <footer className="w-full h-20 bg-[#2C2C2C] text-white flex items-center justify-center border-t border-[#B0B0B0]">
             <p className="text-[1rem] text-[#B0B0B0]">© 2025 Muhammad Taqi  All rights reserved  |  Designed & Developed by Muhammad Taqi.</p>
         </footer>
     );
