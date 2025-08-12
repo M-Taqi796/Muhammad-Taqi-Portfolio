@@ -6,7 +6,7 @@ import windows from "../assets/platforms/windows.svg";
 
 const Platforms = () => {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between mb-20">
       <img className="size-16" src={web} alt="" />
       <img className="size-16" src={android} alt="" />
       <img className="size-16" src={ios} alt="" />
