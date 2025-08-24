@@ -28,14 +28,6 @@ const ProjectsData = [
         "link": "https://www.figma.com/proto/7kPZ2abCEF90bdDK6unbfD/TeraOnic-2?page-id=0%3A1&node-id=447-902&p=f&viewport=631%2C-85%2C0.1&t=gHFLbituOonHe8ki-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=447%3A902"
     },
     {
-        "id": 3,
-        "title": "WingMan Depo",
-        "category": "Web Dev",
-        "image": Wingman,
-        "link": "https://wingmandepot.us/"
-    },
-    
-    {
         "id": 4,
         "title": "T-Shop E-Commerce",
         "category": "Web Design",
