@@ -8,7 +8,7 @@ const Footer = () => {
         <motion.div initial={{opacity:0, x:-200}} whileInView={{opacity:1, x:0}} transition={{duration:0.5}}>
         <h1 className="text-5xl text-[#FFD166] max-sm:text-[1rem] max-lg:text-3xl">Lets work together</h1>
         </motion.div>
-        <motion.div initial={{opacity:0, x:100}} whileInView={{opacity:1, x:0}} transition={{duration:0.5}}>
+        <motion.div initial={{opacity:0, x:-200}} whileInView={{opacity:1, x:0}} transition={{duration:0.5}}>
         <img className="size-24 max-sm:size-10" src={Taqi} alt="" />
         </motion.div>
       </div>
