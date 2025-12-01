@@ -1,7 +1,7 @@
 const SecondryBtn = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Muhammad_Taqi_Resume.pdf";
+    link.href = "https://drive.usercontent.google.com/u/0/uc?id=1UDbhLa8SDynnlN-sV4LpuyUgUy9tNCdI&export=download";
     link.download = "Muhammad_Taqi_Resume.pdf";
     link.click();
   };
