@@ -1,35 +1,75 @@
-import Figma from "../assets/hero/figma.svg";
-import XD from "../assets/hero/xd.svg";
-import React from "../assets/hero/react.svg";
-import Next from "../assets/hero/next.svg";
-import Tailwind from "../assets/hero/tailwind.svg";
-import Scss from "../assets/hero/scss.svg";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Taqi from "../assets/hero/Taqi.png";
-const Hero = () => {
-  return (
-    <section className="mb-20 mr-24 bg-[#B0B0B0] px-28 rounded-r-full flex items-center justify-center gap-8 text-[#2C2C2C] max-sm:rounded-r-none max-sm:px-1 max-sm:mr-0 max-sm:w-full max-sm:mb-10 max-xl:mr-14 max-lg:mr-0 max-md:mr-0 max-lg:rounded-r-none max-lg:px-16 max-md:px-10">
-      <div className="grid grid-cols-3 gap-x-8 gap-y-20 max-sm:grid-cols-2 max-sm:gap-x-1 max-sm:gap-y-1 max-lg:gap-y-12 max-lg:gap-x-4 max-xl:gap-y-6 max-xl:gap-x-6 max-md:gap-y-10 max-md:gap-x-4">
-        <img className="max-sm:size-9" src={Figma} alt="Figma" />
-        <img className="max-sm:size-9" src={XD} alt="XD" />
-        <img className="max-sm:size-9" src={React} alt="React" />
-        <img className="max-sm:size-9" src={Next} alt="Next" />
-        <img className="max-sm:size-9" src={Tailwind} alt="Tailwind" />
-        <img className="max-sm:size-9" src={Scss} alt="Scss" />
-      </div>
+import PrimaryBtn from "./PrimaryBtn";
+import SecondryBtn from "./SecondryBtn";
+import { useRef } from "react";
 
-      <img className="mt-[-3.5rem] max-sm:w-32 max-sm:mt-[-1rem] max-xl:w-72 max-lg:w-60 max-lg:mt-[-2.5rem] max-md:w-48" src={Taqi} alt="" />
-      <div className="flex flex-col gap-20 max-sm:gap-4 max-xl:gap-16 max-lg:gap-10 max-md:gap-6">
-        <div className="font-bold">
-            <h1 className="text-2xl font-normal max-sm:text-[0.75rem] max-lg:text-xl">Experience</h1>
-            <h1 className="text-4xl max-sm:text-[1rem] max-lg:text-3xl">2 <span className="text-transparent [-webkit-text-stroke:1px_#2C2C2C]">Plus</span></h1>
-            <h1 className="text-4xl max-sm:text-[1rem] max-lg:text-3xl">Years</h1>
+const Hero = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  return (
+    <section ref={ref} className="mb-20 px-8 md:px-16 lg:px-24 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 overflow-hidden min-h-[80vh]">
+      <motion.div
+        className="flex flex-col gap-8 lg:w-1/2"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="flex flex-col gap-4">
+          <h2 className="text-2xl md:text-3xl text-[#4DD0E1] font-medium">Hello! I am</h2>
+          <h1 className="font-Nura text-5xl md:text-7xl font-bold text-[#FFD166]">
+            <span className="text-transparent [-webkit-text-stroke:1px_#FFD166]">
+              Muhammad
+            </span>{" "}
+            Taqi
+          </h1>
+          <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+            A UI/UX Designer & <br />
+            Front-End Developer
+          </h2>
+          <p className="text-gray-400 text-lg max-w-xl mt-4">
+            I'm a passionate developer and designer creating seamless digital experiences.
+          </p>
         </div>
-        <div className="font-bold">
-            <h1 className="text-2xl font-normal max-sm:text-[0.75rem] max-lg:text-xl">Projects</h1>
-            <h1 className="text-4xl max-sm:text-[1rem] max-lg:text-3xl">20 <span className="text-transparent [-webkit-text-stroke:1px_#2C2C2C]">Plus</span></h1>
-            <h1 className="text-4xl max-sm:text-[1rem] max-lg:text-3xl">Delivered</h1>
+
+        <div className="flex gap-6 mt-4">
+          <SecondryBtn />
+          <PrimaryBtn />
         </div>
-      </div>
+
+        <div className="flex gap-12 mt-8">
+          <div>
+            <h3 className="text-4xl font-bold">2+</h3>
+            <p className="text-gray-400">Years Experience</p>
+          </div>
+          <div>
+            <h3 className="text-4xl font-bold">20+</h3>
+            <p className="text-gray-400">Projects Delivered</p>
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="lg:w-1/2 flex justify-center lg:justify-end relative"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        style={{ y, opacity }}
+      >
+        <div className="absolute inset-0 bg-[#4DD0E1] blur-[100px] opacity-20 rounded-full"></div>
+        <img
+          className="relative z-10 w-64 md:w-80 lg:w-96 object-cover grayscale hover:grayscale-0 transition-all duration-500"
+          src={Taqi}
+          alt="Muhammad Taqi"
+        />
+      </motion.div>
     </section>
   );
 };
