@@ -1,14 +1,22 @@
+import { motion } from "framer-motion";
+
 const ContactsCard = ({ title, contact, image, onClick }) => {
   return (
-    <button className="w-80 py-12 shadow-[0px_0px_4px_0px_#B0B0B0] rounded-xl flex flex-col items-center gap-14 hover:shadow-[0px_0px_4px_0px_#4DD0E1] group max-sm:py-6 max-sm:gap-6" onClick={onClick}>
-      <img className="size-24 max-sm:size-20" src={image} alt={title} />
-      <div className="flex flex-col items-center gap-6 max-sm:gap-3">
-        <h3 className="text-3xl text-white group-hover:text-[#FFD166] max-sm:text-2xl">
+    <motion.button
+      className="w-full md:w-80 py-12 px-6 bg-[#3a3a3a] rounded-2xl flex flex-col items-center gap-8 shadow-lg hover:shadow-[#4DD0E1]/20 transition-all duration-300 border border-transparent hover:border-[#4DD0E1]/50 group cursor-pointer"
+      onClick={onClick}
+      whileHover={{ y: -10 }}
+    >
+      <div className="p-4 bg-[#2c2c2c] rounded-full group-hover:bg-[#4DD0E1]/10 transition-colors duration-300">
+        <img className="size-16 group-hover:scale-110 transition-transform duration-300" src={image} alt={title} />
+      </div>
+      <div className="flex flex-col items-center gap-2">
+        <h3 className="text-2xl font-bold text-white group-hover:text-[#4DD0E1] transition-colors duration-300">
           {title}
         </h3>
-        <p className="text-xl text-[#B0B0B0] max-sm:text-sm">{contact}</p>
+        <p className="text-lg text-gray-400 group-hover:text-white transition-colors duration-300">{contact}</p>
       </div>
-    </button>
+    </motion.button>
   );
 };
 

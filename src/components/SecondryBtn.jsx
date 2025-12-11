@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const SecondryBtn = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
@@ -6,9 +8,14 @@ const SecondryBtn = () => {
     link.click();
   };
   return (
-    <button className="w-56 h-12 border border-[#4DD0E1] text-[#4DD0E1] text-2xl shadow-[4px_4px_0_0_#FFD166] hover:shadow-[0px_0px_0_0]" onClick={handleDownload}>
-      Download CV
-    </button>
+    <motion.button
+      className="w-56 h-14 border-2 border-[#4DD0E1] text-[#4DD0E1] text-xl font-bold rounded-full shadow-lg hover:shadow-[#4DD0E1]/30 hover:bg-[#4DD0E1]/10 transition-all duration-300 relative overflow-hidden group"
+      onClick={handleDownload}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      <span className="relative z-10">Download CV</span>
+    </motion.button>
   );
 };
 
