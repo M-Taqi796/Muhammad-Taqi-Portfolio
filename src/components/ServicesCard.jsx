@@ -1,9 +1,10 @@
+
 import { motion } from "framer-motion";
 
 const ServicesCard = ({ text, image }) => {
     return (
         <motion.div
-            className="w-full md:w-80 py-12 px-8 bg-[#3a3a3a] rounded-2xl flex flex-col items-center gap-8 shadow-lg hover:shadow-[#4DD0E1]/20 transition-all duration-300 border border-transparent hover:border-[#4DD0E1]/50 group"
+            className="w-full h-full py-12 px-8 bg-[#3a3a3a] rounded-2xl flex flex-col items-center gap-8 shadow-lg hover:shadow-[#4DD0E1]/20 transition-all duration-300 border border-transparent hover:border-[#4DD0E1]/50 group"
             whileHover={{ y: -10 }}
         >
             <div className="p-4 bg-[#2c2c2c] rounded-full group-hover:bg-[#4DD0E1]/10 transition-colors duration-300">
