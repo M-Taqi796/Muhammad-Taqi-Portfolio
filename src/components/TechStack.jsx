@@ -24,7 +24,7 @@ const technologies = [
 
 const TechStack = () => {
     return (
-        <div className="w-full overflow-hidden py-10 bg-[#2c2c2c]">
+        <div className="w-full overflow-hidden py-10 bg-transparent">
             <motion.div
                 className="flex gap-16 items-center"
                 animate={{ x: ["0%", "-50%"] }}

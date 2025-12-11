@@ -9,7 +9,7 @@ const SecondryBtn = () => {
   };
   return (
     <motion.button
-      className="w-56 h-14 border-2 border-[#4DD0E1] text-[#4DD0E1] text-xl font-bold rounded-full shadow-lg hover:shadow-[#4DD0E1]/30 hover:bg-[#4DD0E1]/10 transition-all duration-300 relative overflow-hidden group"
+      className="w-full md:w-56 h-14 border-2 border-[#4DD0E1] text-[#4DD0E1] text-xl font-bold rounded-full shadow-lg hover:shadow-[#4DD0E1]/30 hover:bg-[#4DD0E1]/10 transition-all duration-300 relative overflow-hidden group"
       onClick={handleDownload}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
