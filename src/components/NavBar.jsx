@@ -21,7 +21,7 @@ const NavBar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-6 text-[1rem] items-center">
           <Link
-            className="border border-white/20 px-6 py-2 flex gap-3 items-center rounded-full hover:bg-white hover:text-[#2c2c2c] transition-all duration-300 group"
+            className="border border-white/20 px-6 py-2 flex gap-3 items-center rounded-[0.5rem] hover:bg-white hover:text-[#2c2c2c] transition-all duration-300 group"
             to="/contact"
           >
             <img src={CallIcon} alt="" className="group-hover:invert transition-all duration-300" />
