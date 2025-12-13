@@ -25,13 +25,13 @@ const ContactInfo = () => {
                 Get in touch
             </motion.h2>
             <div className="flex flex-wrap justify-center gap-8 w-full">
-                <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}>
+                <motion.div className="w-full md:w-auto" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}>
                     <ContactsCard title="WhatsApp" contact="+923219747270" image={Whatsapp} onClick={whatsappClick} />
                 </motion.div>
-                <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
+                <motion.div className="w-full md:w-auto" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
                     <ContactsCard title="Instagram" contact="@uiux.taqi" image={Instagram} onClick={instagramClick} />
                 </motion.div>
-                <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}>
+                <motion.div className="w-full md:w-auto" initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}>
                     <ContactsCard title="Email" contact="itstaqi2919@gmail.com" image={Email} onClick={emailClick} />
                 </motion.div>
             </div>

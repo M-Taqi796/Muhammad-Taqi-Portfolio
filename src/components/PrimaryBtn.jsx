@@ -5,7 +5,7 @@ const PrimaryBtn = () => {
   const navigate = useNavigate();
   return (
     <motion.button
-      className="w-full md:w-56 h-14 bg-gradient-to-r from-[#4DD0E1] to-[#00BCD4] text-[#2C2C2C] text-xl font-bold rounded-full shadow-lg hover:shadow-[#4DD0E1]/50 transition-all duration-300 relative overflow-hidden group"
+      className="w-full md:w-56 h-14 bg-gradient-to-r from-[#4DD0E1] to-[#00BCD4] text-[#2C2C2C] text-xl font-bold rounded-[0.5rem] shadow-lg hover:shadow-[#4DD0E1]/50 transition-all duration-300 relative overflow-hidden group"
       onClick={() => { navigate("/contact") }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}

@@ -23,25 +23,23 @@ const Hero = () => {
         transition={{ duration: 0.8 }}
       >
         <div className="flex flex-col gap-4 text-center lg:text-left">
-          <h2 className="text-xl md:text-3xl text-[#4DD0E1] font-medium">Hello! I am</h2>
+          <h2 className="text-xl md:text-3xl font-medium">Hello! I am</h2>
           <h1 className="font-Nura text-4xl md:text-7xl font-bold text-[#FFD166]">
-            <span className="text-transparent [-webkit-text-stroke:1px_#FFD166]">
-              Muhammad
-            </span>{" "}
+            Muhammad
             Taqi
           </h1>
           <h2 className="text-2xl md:text-4xl font-bold text-white leading-tight">
-            A UI/UX Designer & <br />
-            Front-End Developer
+            A Software Enginner & <br />
+            Ui/Ux Designer
           </h2>
           <p className="text-gray-400 text-base md:text-lg max-w-xl mt-4 mx-auto lg:mx-0">
-            I'm a passionate developer and designer creating seamless digital experiences.
+            I'm a passionate software engineer and designer crafting scalable software and intuitive user interfaces.
           </p>
         </div>
 
         <div className="flex flex-col md:flex-row gap-6 mt-4 w-full">
-          <SecondryBtn />
           <PrimaryBtn />
+          <SecondryBtn />
         </div>
 
         <div className="flex gap-12 mt-8 justify-center lg:justify-start">
