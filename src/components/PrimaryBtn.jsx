@@ -11,7 +11,7 @@ const PrimaryBtn = () => {
       whileTap={{ scale: 0.95 }}
     >
       <span className="relative z-10">Hire Me</span>
-      <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 rounded-full"></div>
+      <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 rounded-[0.5rem]"></div>
     </motion.button>
   );
 };
