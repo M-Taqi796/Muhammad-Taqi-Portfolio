@@ -12,7 +12,11 @@ const Projects = () => {
             title={project.title}
             image={project.image}
             category={project.category}
-            onClick={() => window.open(project.link, "_blank")}
+            link={project.link}
+            onCaseStudy={() => {
+              // Placeholder for upcoming Case Study pages
+              console.log(`Case study clicked for ${project.title}`);
+            }}
           />
         ))}
       </div>
