@@ -8,11 +8,11 @@ const ProjectCard = ({ title, image, category, onClick }) => {
             transition={{ duration: 0.3 }}
             onClick={onClick}
         >
-            <div className="h-64 overflow-hidden">
+            <div className="w-full aspect-square overflow-hidden bg-[#2a2a2a]">
                 <img
                     src={image}
                     alt={title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                 />
             </div>
