@@ -19,21 +19,24 @@ const ProjectsData = [
         "title": "UniGo - Smart Transport Solution",
         "category": ["UI/UX Design", "Web Development"],
         "image": UniGo,
-        "link": "https://www.unigo.app"
+        "link": "https://www.unigo.app",
+        "caseStudyPath": "/case-study/unigo"
     },
     {
         "id": 2,
         "title": "Virgin Lots",
         "category": "UI/UX Design",
         "image": VirginLots,
-        "link": "https://www.virginlots.com"
+        "link": "https://www.virginlots.com",
+        "caseStudyPath": "/case-study/virgin-lots"
     },
     {
         "id": 3,
         "title": "Amstani & Co",
         "category": "UI/UX Design",
         "image": AmstaniCo,
-        "link": "https://www.Amstaniandco.com"
+        "link": "https://www.Amstaniandco.com",
+        "caseStudyPath": "/case-study/amstani-co"
     },
     {
         "id": 4,
@@ -44,10 +47,11 @@ const ProjectsData = [
     },
     {
         "id": 5,
-        "title": "Shark EcommerceSolutions",
+        "title": "Shark Ecommerce Solutions",
         "category": ["UI/UX Design", "Web Development"],
         "image": SharkEcommerceSolutions,
-        "link": "https://www.sharkecommercesolutions.com"
+        "link": "https://www.sharkecommercesolutions.com",
+        "caseStudyPath": "/case-study/shark-ecommerce-solutions"
     },
     {
         "id": 6,
@@ -101,14 +105,14 @@ const ProjectsData = [
     {
         "id": 13,
         "title": "AU Transport System App",
-        "category": "App UI/UX Design",
+        "category": ["UI/UX Design", "Mobile App"],
         "image": AUTransport,
         "link": "https://www.figma.com/proto/xjumxMoj3T9q6QF2gTp1GL/AU-Tranaport-System?page-id=0%3A1&node-id=38-101&starting-point-node-id=457%3A131&t=lj3Kay3pfLFCcnmW-1"
     },
     {
         "id": 14,
         "title": "App Signup Flow",
-        "category": "App UI/UX Design",
+        "category": ["UI/UX Design", "Mobile App"],
         "image": AppSignup,
         "link": "https://www.figma.com/proto/X2nCkOTFwK3I3uHvRaIUSf/Encryptix-Task-1-Sign-up-Page?page-id=0%3A1&node-id=1-112&starting-point-node-id=1%3A112&t=tFYSB4h3nQGQwdTM-1"
     }

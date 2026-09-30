@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const ProjectCard = ({ title, image, category, link, onCaseStudy }) => {
+const ProjectCard = ({ title, image, category, link, onCaseStudy, hasCaseStudy }) => {
     const tags = Array.isArray(category) ? category : (category ? [category] : []);
 
     const handleVisit = (e) => {
@@ -59,9 +59,30 @@ const ProjectCard = ({ title, image, category, link, onCaseStudy }) => {
                 {/* Divider */}
                 <div className="w-full h-px bg-white/8 mt-auto mb-1" />
 
-                {/* Buttons */}
+                {/* Buttons — Case Study left, Visit right */}
                 <div className="grid grid-cols-2 gap-2.5">
-                    {/* Visit — cyan border outline */}
+                    {/* Case Study — left */}
+                    <motion.button
+                        type="button"
+                        onClick={hasCaseStudy ? handleCaseStudy : undefined}
+                        whileHover={hasCaseStudy ? { scale: 1.03 } : {}}
+                        whileTap={hasCaseStudy ? { scale: 0.97 } : {}}
+                        title={hasCaseStudy ? "Read Case Study" : "Coming Soon"}
+                        className="relative flex items-center justify-center gap-1.5 py-2.5 rounded-xl font-semibold text-[0.83rem] overflow-hidden transition-colors duration-300"
+                        style={{
+                            background: hasCaseStudy ? "rgba(77,208,225,0.06)" : "rgba(255,255,255,0.02)",
+                            border: hasCaseStudy ? "1px solid rgba(77,208,225,0.3)" : "1px solid rgba(255,255,255,0.07)",
+                            color: hasCaseStudy ? "#4DD0E1" : "rgba(255,255,255,0.2)",
+                            cursor: hasCaseStudy ? "pointer" : "not-allowed",
+                        }}
+                    >
+                        <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <span>{hasCaseStudy ? "Case Study" : "Coming Soon"}</span>
+                    </motion.button>
+
+                    {/* Visit — right, cyan border */}
                     <motion.button
                         type="button"
                         onClick={handleVisit}
@@ -77,24 +98,6 @@ const ProjectCard = ({ title, image, category, link, onCaseStudy }) => {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
                         <span>Visit</span>
-                    </motion.button>
-
-                    {/* Case Study — ghost */}
-                    <motion.button
-                        type="button"
-                        onClick={handleCaseStudy}
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.97 }}
-                        className="relative flex items-center justify-center gap-1.5 py-2.5 rounded-xl font-semibold text-[0.83rem] text-gray-300 overflow-hidden transition-colors duration-300 hover:text-white"
-                        style={{
-                            background: "rgba(255,255,255,0.04)",
-                            border: "1px solid rgba(255,255,255,0.12)",
-                        }}
-                    >
-                        <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                        <span>Case Study</span>
                     </motion.button>
                 </div>
             </div>
