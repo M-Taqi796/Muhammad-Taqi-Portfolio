@@ -7,7 +7,7 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 flex flex-col py-4 px-8 md:px-16 lg:px-24 backdrop-blur-md bg-[#2c2c2c]/80 border-b border-white/10 mb-10 transition-all duration-300">
+    <nav className="sticky top-0 z-50 flex flex-col py-4 px-8 md:px-16 lg:px-24 backdrop-blur-md bg-[#2c2c2c]/80 border-b border-white/10 transition-all duration-300">
       <div className="flex justify-between items-center w-full">
         <Link to="/">
           <h1 className="font-Nura text-2xl font-bold max-sm:text-[1rem]">

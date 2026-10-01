@@ -1,4 +1,4 @@
-import Hero from "../components/HeroSection";
+import Header from "../components/Header";
 import ScrollBackground from "../components/ScrollBackground";
 import TechStack from "../components/TechStack";
 import Platforms from "../components/Platforms"
@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <>
             <ScrollBackground />
-            <Hero />
+            <Header />
             <TechStack />
             <Platforms />
             <Services />
