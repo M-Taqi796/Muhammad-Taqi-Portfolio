@@ -10,9 +10,9 @@ const Home = () => {
         <>
             <ScrollBackground />
             <Header />
-            <TechStack />
-            <Platforms />
             <Services />
+            <TechStack />
+            {/* <Platforms /> */}
             <Projects />
         </>
     )

@@ -1,10 +1,34 @@
 import { useState } from "react";
 import Taqi from "../assets/footer/taqi.svg";
+import Whatsapp from "../assets/contact/Whatsapp.svg";
+import Instagram from "../assets/contact/Instagram.svg";
+import Email from "../assets/contact/Email.svg";
 import { motion } from 'framer-motion';
 
 const Footer = () => {
   const [footerEmail, setFooterEmail] = useState("");
   const [footerStatus, setFooterStatus] = useState("idle"); // idle | loading | success | error
+
+  const contactLinks = [
+    {
+      name: "Email",
+      value: "itstaqi2919@gmail.com",
+      href: "mailto:itstaqi2919@gmail.com",
+      icon: Email,
+    },
+    {
+      name: "WhatsApp",
+      value: "+923466689886",
+      href: "https://wa.me/923466689886?text=Hello!%20I%20want%20to%20hire%20you.",
+      icon: Whatsapp,
+    },
+    {
+      name: "Instagram",
+      value: "dev.taqi",
+      href: "https://www.instagram.com/dev.taqi",
+      icon: Instagram,
+    },
+  ];
 
   const handleFooterSubmit = async (e) => {
     e.preventDefault();
@@ -70,15 +94,18 @@ const Footer = () => {
 
   return (
     <footer className="text-white flex flex-col border-t border-white/10 py-12 gap-12 px-8 md:px-16 lg:px-24 bg-[#2c2c2c]">
-      <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+      <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
+        {/* Left: Let's Work Together Section */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col gap-4 text-center md:text-left w-full md:w-auto"
+          className="flex flex-col gap-4 text-center md:text-left flex-1"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-[#FFD166]">Let's work together</h1>
-          <p className="text-gray-400 max-w-md">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#FFD166] md:whitespace-nowrap">
+            Let's work together
+          </h1>
+          <p className="text-gray-400 max-w-lg">
             Have a project in mind? Let's create something amazing together.
           </p>
 
@@ -89,7 +116,7 @@ const Footer = () => {
             data-netlify="true"
             netlify-honeypot="bot-field"
             onSubmit={handleFooterSubmit}
-            className="mt-2 flex flex-col sm:flex-row gap-3 max-w-md w-full"
+            className="mt-2 flex flex-col sm:flex-row gap-3 w-full max-w-md"
           >
             <input type="hidden" name="form-name" value="footer-contact" />
             <input
@@ -131,25 +158,35 @@ const Footer = () => {
           )}
         </motion.div>
 
+        {/* Right: Profile Image & Contact Details */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
+          className="flex flex-col items-center md:items-end gap-5 shrink-0 w-full md:w-auto"
         >
-          <img className="w-24 h-24 md:w-32 md:h-32 object-contain" src={Taqi} alt="Muhammad Taqi" />
+          <img className="w-24 h-24 md:w-28 md:h-28 object-contain" src={Taqi} alt="Muhammad Taqi" />
+
+          <div className="flex flex-col items-center md:items-end gap-3 w-full md:w-auto">
+            {contactLinks.map((item) => (
+              <motion.a
+                key={item.name}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ x: -4 }}
+                whileTap={{ scale: 0.98 }}
+                className="flex items-center gap-3.5 text-gray-300 hover:text-white transition-colors group cursor-pointer"
+              >
+                <div className="w-10 h-10 rounded-full bg-[#1E1E1E] border border-white/10 flex items-center justify-center group-hover:border-[#4DD0E1] group-hover:bg-[#4DD0E1]/10 transition-all shrink-0">
+                  <img src={item.icon} alt={item.name} className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                </div>
+                <span className="text-sm sm:text-base font-medium">{item.value}</span>
+              </motion.a>
+            ))}
+          </div>
         </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="flex flex-wrap justify-center gap-8 md:gap-16 text-lg md:text-xl font-medium"
-      >
-        <a href="https://wa.me/923219747270?text=Hello!%20I%20want%20to%20hire%20you." target="_blank" rel="noopener noreferrer" className="hover:text-[#4DD0E1] transition-colors duration-300">WhatsApp</a>
-        <a href="https://www.instagram.com/direct/t/uiux.taqi" target="_blank" rel="noopener noreferrer" className="hover:text-[#4DD0E1] transition-colors duration-300">Instagram</a>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=itstaqi2919@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#4DD0E1] transition-colors duration-300">Email</a>
-      </motion.div>
 
       <motion.div
         initial={{ opacity: 0 }}

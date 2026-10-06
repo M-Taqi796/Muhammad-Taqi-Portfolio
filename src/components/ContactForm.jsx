@@ -13,7 +13,7 @@ const ContactForm = () => {
   const services = [
     {
       id: "Design & Development",
-      label: "Design & Development",
+      label: "Design & Dev",
       icon: (
         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polyline points="16 18 22 12 16 6" />
@@ -200,11 +200,10 @@ const ContactForm = () => {
                     key={s.id}
                     type="button"
                     onClick={() => setService(s.id)}
-                    className={`py-3 px-3 rounded-xl font-medium text-xs sm:text-sm flex flex-col sm:flex-row items-center justify-center gap-2 transition-colors duration-200 border cursor-pointer ${
-                      isSelected
-                        ? "bg-[#4DD0E1]/15 border-[#4DD0E1] text-[#4DD0E1]"
-                        : "bg-[#1E1E1E] border-white/10 text-gray-400 hover:text-white hover:border-white/20"
-                    }`}
+                    className={`py-3 px-3 rounded-xl font-medium text-xs sm:text-sm flex flex-col sm:flex-row items-center justify-center gap-2 transition-colors duration-200 border cursor-pointer ${isSelected
+                      ? "bg-[#4DD0E1]/15 border-[#4DD0E1] text-[#4DD0E1]"
+                      : "bg-[#1E1E1E] border-white/10 text-gray-400 hover:text-white hover:border-white/20"
+                      }`}
                   >
                     <span>{s.icon}</span>
                     <span className="text-center">{s.label}</span>
