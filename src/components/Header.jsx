@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import PrimaryBtn from "./PrimaryBtn";
 import SecondryBtn from "./SecondryBtn";
 
@@ -51,6 +51,10 @@ const Header = () => {
     const designerOpacity = split >= 50 ? 1 : Math.max(0.35, 1 - ((50 - split) / 50) * 0.65);
     const coderOpacity = split <= 50 ? 1 : Math.max(0.35, 1 - ((split - 50) / 50) * 0.65);
 
+    // Active state toggles synchronously with the split image
+    const isDesignerActive = isHovering && split > 50;
+    const isCoderActive = isHovering && split < 50;
+
     const transitionStyle = isHovering
         ? "clip-path 0.08s ease-out, left 0.08s ease-out, opacity 0.15s ease-out"
         : "clip-path 0.6s cubic-bezier(0.16, 1, 0.3, 1), left 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease-out";
@@ -74,7 +78,7 @@ const Header = () => {
 
                 {/* LEFT SIDE: DESIGNER */}
                 <div
-                    className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left transition-opacity duration-200"
+                    className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left transition-opacity duration-200 self-stretch justify-center"
                     style={{
                         opacity: designerOpacity,
                         transition: transitionStyle,
@@ -84,16 +88,36 @@ const Header = () => {
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="flex flex-col items-center lg:items-start w-full"
                     >
                         <h1
-                            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight mb-4"
+                            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight"
                             style={{ letterSpacing: "-0.03em" }}
                         >
                             DESIGNER
                         </h1>
-                        <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed max-w-sm font-normal">
-                            UI/UX Designer specialised in web and mobile products, transforming complex workflows into clean, interactive Figma designs.
-                        </p>
+                        <AnimatePresence>
+                            {isDesignerActive && (
+                                <motion.div
+                                    key="designer-content"
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: "auto" }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                                    className="overflow-hidden flex flex-col items-center lg:items-start w-full"
+                                >
+                                    <div className="pt-4 flex flex-col items-center lg:items-start w-full">
+                                        <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed max-w-sm font-normal mb-6">
+                                            UI/UX Designer specialised in web and mobile products, transforming complex workflows into clean, interactive Figma designs.
+                                        </p>
+                                        <SecondryBtn
+                                            href="/Documents/MuhammadTaqiUiUxDesigner.pdf"
+                                            download="MuhammadTaqiUiUxDesigner.pdf"
+                                        />
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </motion.div>
                 </div>
 
@@ -154,9 +178,8 @@ const Header = () => {
                         className="flex flex-col items-center gap-7 w-full"
                     >
                         {/* Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full max-w-md">
-                            <PrimaryBtn />
-                            <SecondryBtn />
+                        <div className="w-full max-w-md flex justify-center">
+                            <PrimaryBtn className="w-full" />
                         </div>
 
                         {/* Stats */}
@@ -175,7 +198,7 @@ const Header = () => {
 
                 {/* RIGHT SIDE: CODER */}
                 <div
-                    className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left transition-opacity duration-200"
+                    className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left transition-opacity duration-200 self-stretch justify-center"
                     style={{
                         opacity: coderOpacity,
                         transition: transitionStyle,
@@ -185,16 +208,36 @@ const Header = () => {
                         initial={{ opacity: 0, x: 30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="flex flex-col items-center lg:items-start w-full"
                     >
                         <h1
-                            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight mb-4"
+                            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight"
                             style={{ letterSpacing: "-0.03em" }}
                         >
                             &lt;CODER&gt;
                         </h1>
-                        <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed max-w-sm font-normal">
-                            Software Engineer specialized in front-end development, crafting responsive, high-performance web and mobile apps.
-                        </p>
+                        <AnimatePresence>
+                            {isCoderActive && (
+                                <motion.div
+                                    key="coder-content"
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: "auto" }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                                    className="overflow-hidden flex flex-col items-center lg:items-start w-full"
+                                >
+                                    <div className="pt-4 flex flex-col items-center lg:items-start w-full">
+                                        <p className="text-white text-sm sm:text-base md:text-lg leading-relaxed max-w-sm font-normal mb-6">
+                                            Software Engineer specialized in front-end development, crafting responsive, high-performance web and mobile apps.
+                                        </p>
+                                        <SecondryBtn
+                                            href="/Documents/Muhammad Taqi Web Developer.pdf"
+                                            download="Muhammad Taqi Web Developer.pdf"
+                                        />
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </motion.div>
                 </div>
 
@@ -204,3 +247,4 @@ const Header = () => {
 };
 
 export default Header;
+
