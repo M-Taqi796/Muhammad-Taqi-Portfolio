@@ -4,6 +4,7 @@ import Whatsapp from "../assets/contact/Whatsapp.svg";
 import Instagram from "../assets/contact/Instagram.svg";
 import Email from "../assets/contact/Email.svg";
 import { motion } from 'framer-motion';
+import { Mascot } from 'page-mascot';
 
 const Footer = () => {
   const [footerEmail, setFooterEmail] = useState("");
@@ -166,7 +167,15 @@ const Footer = () => {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center lg:items-end gap-5 shrink-0"
         >
-          <img className="w-24 h-24 md:w-28 md:h-28 object-contain self-center" src={Taqi} alt="Muhammad Taqi" />
+          <div className="self-center flex flex-col items-center">
+            <Mascot
+              directions="/mascots/beard-directions.webp"
+              reactions="/mascots/beard-reactions.webp"
+              size={135}
+              label="Muhammad Taqi"
+              className="hover:scale-105 transition-transform duration-200"
+            />
+          </div>
 
           <div className="flex flex-col items-start gap-3 w-fit">
             {contactLinks.map((item) => (
@@ -205,4 +214,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
