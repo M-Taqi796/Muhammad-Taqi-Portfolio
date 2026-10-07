@@ -158,7 +158,7 @@ const Projects = () => {
         </div>
 
         {/* Filter Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5">
+        <div className="w-full max-w-xl md:max-w-none flex flex-wrap items-center justify-start md:justify-center gap-2.5">
           {FILTERS.map((filter) => {
             const isActive = selectedFilter === filter;
             const count = filterCounts[filter] ?? 0;

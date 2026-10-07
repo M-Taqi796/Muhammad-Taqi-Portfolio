@@ -11,10 +11,10 @@ const Footer = () => {
 
   const contactLinks = [
     {
-      name: "Email",
-      value: "itstaqi2919@gmail.com",
-      href: "mailto:itstaqi2919@gmail.com",
-      icon: Email,
+      name: "Instagram",
+      value: "dev.taqi",
+      href: "https://www.instagram.com/dev.taqi",
+      icon: Instagram,
     },
     {
       name: "WhatsApp",
@@ -23,10 +23,10 @@ const Footer = () => {
       icon: Whatsapp,
     },
     {
-      name: "Instagram",
-      value: "dev.taqi",
-      href: "https://www.instagram.com/dev.taqi",
-      icon: Instagram,
+      name: "Email",
+      value: "itstaqi2919@gmail.com",
+      href: "mailto:itstaqi2919@gmail.com",
+      icon: Email,
     },
   ];
 
@@ -93,16 +93,17 @@ const Footer = () => {
   };
 
   return (
-    <footer className="text-white flex flex-col border-t border-white/10 py-12 gap-12 px-8 md:px-16 lg:px-24 bg-[#2c2c2c]">
-      <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
+    <footer className="text-white flex flex-col border-t border-white/10 py-12 gap-12 px-6 sm:px-10 md:px-14 lg:px-12 xl:px-20 2xl:px-24 bg-[#2c2c2c]">
+      <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start gap-10">
+
         {/* Left: Let's Work Together Section */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col gap-4 text-center md:text-left flex-1"
+          className="flex flex-col items-center lg:items-start gap-4 text-center lg:text-left flex-1 w-full min-w-0"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#FFD166] md:whitespace-nowrap">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-[#FFD166] lg:whitespace-nowrap">
             Let's work together
           </h1>
           <p className="text-gray-400 max-w-lg">
@@ -116,7 +117,7 @@ const Footer = () => {
             data-netlify="true"
             netlify-honeypot="bot-field"
             onSubmit={handleFooterSubmit}
-            className="mt-2 flex flex-col sm:flex-row gap-3 w-full max-w-md"
+            className="mt-2 flex flex-col sm:flex-row gap-3 w-full max-w-md mx-auto lg:mx-0"
           >
             <input type="hidden" name="form-name" value="footer-contact" />
             <input
@@ -163,29 +164,30 @@ const Footer = () => {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-center md:items-end gap-5 shrink-0 w-full md:w-auto"
+          className="flex flex-col items-center lg:items-end gap-5 shrink-0"
         >
-          <img className="w-24 h-24 md:w-28 md:h-28 object-contain" src={Taqi} alt="Muhammad Taqi" />
+          <img className="w-24 h-24 md:w-28 md:h-28 object-contain self-center" src={Taqi} alt="Muhammad Taqi" />
 
-          <div className="flex flex-col items-center md:items-end gap-3 w-full md:w-auto">
+          <div className="flex flex-col items-start gap-3 w-fit">
             {contactLinks.map((item) => (
               <motion.a
                 key={item.name}
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ x: -4 }}
+                whileHover={{ x: 4 }}
                 whileTap={{ scale: 0.98 }}
                 className="flex items-center gap-3.5 text-gray-300 hover:text-white transition-colors group cursor-pointer"
               >
                 <div className="w-10 h-10 rounded-full bg-[#1E1E1E] border border-white/10 flex items-center justify-center group-hover:border-[#4DD0E1] group-hover:bg-[#4DD0E1]/10 transition-all shrink-0">
                   <img src={item.icon} alt={item.name} className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 </div>
-                <span className="text-sm sm:text-base font-medium">{item.value}</span>
+                <span className="text-sm sm:text-base font-medium whitespace-nowrap">{item.value}</span>
               </motion.a>
             ))}
           </div>
         </motion.div>
+
       </div>
 
       <motion.div
